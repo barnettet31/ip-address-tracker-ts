@@ -1,9 +1,17 @@
 import React from 'react'
-
+import { InputHeader, PageWrapper } from './components/layout/layout.component';
+import { Title } from './components/typography/text.component';
+import './index.css'
 
 function App() {
   return (
-  <h1> done</h1>
+ <PageWrapper>   
+  <InputHeader>
+  <Title>IP Address Tracker</Title>
+  
+  </InputHeader>
+ </PageWrapper>
+
   );
 }
 
