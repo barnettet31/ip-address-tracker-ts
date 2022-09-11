@@ -21,6 +21,7 @@ background-color:#fff;
 border:none;
 outline:none;
 cursor:pointer;
+font-size:1.125rem;
 &::-webkit-input-placeholder{
     color:#2c2c2c;
     opacity:0.5;
