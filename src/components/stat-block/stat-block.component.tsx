@@ -1,22 +1,23 @@
+import { ILocationWithIP } from "../../interfaces"
 import { DetailsContainer, StatContainer, StatContent, StatTitle } from "./stat-block.styles"
 
-export function StatBlock() {
+export function StatBlock({location, ip, isp}:ILocationWithIP) {
     const stats = [
       {
         name:'IP Address',
-        content:'1.92.212.174.101'
+        content:ip
       },
       {
         name:'Location',
-        content:'Brooklyn, NY 10001'
+        content:`${location.city}, ${location.region} ${location.postalCode}`
       },
       {
         name:'Timezone',
-        content:'UTC - 05:00'
+        content:`UTC ${location.timezone}`
       },
       {
         name:'ISP',
-        content:'SpaceX Starlink'
+        content:isp
       },
     ]
     return (
