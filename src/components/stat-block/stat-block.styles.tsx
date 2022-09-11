@@ -14,6 +14,9 @@ align-items:center;
 z-index:999;
 top:calc(35% - 64.5px);
 box-shadow: 0px 50px 50px -25px rgba(0, 0, 0, 0.0983665);
+& > *:not(:last-child) {
+    border-right: 1px solid #00000015;
+}
 @media(max-width:560px){
   width:327px;
   flex-direction:column;
@@ -24,6 +27,12 @@ box-shadow: 0px 50px 50px -25px rgba(0, 0, 0, 0.0983665);
   padding-left:1.5rem;
   padding-right:1.5rem;
 
+  & > *:not(:last-child) {
+    border-right: none;
+    
+    width:100%; 
+}
+
 }
 
 `
@@ -33,6 +42,10 @@ flex-direction:column;
 gap: 0.8125rem;
 text-align:center;
 align-self:center;
+padding-right:2em;
+@media(max-width:560px){
+    padding-right:0;
+}
 `
 export const StatTitle = styled.p`
 font-size:12px;
