@@ -6,12 +6,12 @@ import { Map } from "../map/map.component";
 import { StatBlock } from "../stat-block/stat-block.component";
 
 export function Application() {
-    const {location, ip, isp} = useContext(GeolocationContext);
+    const {location, ip, isp, setNewIp, onSubmit} = useContext(GeolocationContext);
     
   return (
     <>
       <PageWrapper>
-        <Header />
+        <Header onValueChange={setNewIp} onSubmit={onSubmit} ip={ip} />
         <StatBlock location={location} ip={ip} isp={isp} />
         <Map location={location} />
       </PageWrapper>
