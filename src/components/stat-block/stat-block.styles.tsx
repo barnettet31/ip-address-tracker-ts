@@ -14,6 +14,8 @@ align-items:center;
 z-index:999;
 top:calc(35% - 64.5px);
 box-shadow: 0px 50px 50px -25px rgba(0, 0, 0, 0.0983665);
+padding-left:1em;
+padding-right:1em;
 & > *:not(:last-child) {
     border-right: 1px solid #00000015;
 }
