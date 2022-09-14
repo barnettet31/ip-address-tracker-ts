@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const DetailsContainer = styled.div`
 width:1110px;
 display:flex;
-justify-content:space-around;
+justify-content:space-between;
 padding-top: 2.25rem;
 padding-bottom: 2.25rem;
 background-color:#fff;
@@ -14,8 +14,8 @@ align-items:center;
 z-index:999;
 top:calc(35% - 64.5px);
 box-shadow: 0px 50px 50px -25px rgba(0, 0, 0, 0.0983665);
-padding-left:1em;
-padding-right:1em;
+padding-left:2em;
+padding-right:2em;
 & > *:not(:last-child) {
     border-right: 1px solid #00000015;
 }
