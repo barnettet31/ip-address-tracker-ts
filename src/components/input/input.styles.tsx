@@ -45,7 +45,8 @@ export const ButtonDiv = styled.div`
     }
 `
 export const StyledChevronIcon = styled.img.attrs({
-    src:process.env.PUBLIC_URL + '/images/icon-arrow.svg'
+    src:process.env.PUBLIC_URL + '/images/icon-arrow.svg',
+    alt:""
 })`
 
 height:12px;
