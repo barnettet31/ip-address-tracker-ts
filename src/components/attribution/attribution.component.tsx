@@ -10,7 +10,7 @@ export function Attribution() {
     <AttributionContainer width={width} ref={attributionContainer}>
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
-      Frontend Mentor
+       Frontend Mentor
       </a>
       . Coded by <a href="https://github.com/barnettet31">Travis Barnette</a>.
     </AttributionContainer>

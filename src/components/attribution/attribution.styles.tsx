@@ -5,5 +5,8 @@ margin-inset:auto;
 position:absolute;
 bottom:5px;
 left:calc(50% - ${(props)=>props.width/2}px);
+color:red;
+font-weight:bold;
+z-index:999;
  
 `
