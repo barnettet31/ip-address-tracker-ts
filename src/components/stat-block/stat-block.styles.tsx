@@ -54,7 +54,8 @@ font-size:12px;
 line-height:14px;
 letter-spacing:1.75px;
 font-weight:700;
-opacity:0.5;
+opacity:0.75;
+
 @media(max-width:500px){
     line-height:12px;
     letter-spacing:1.45833px;
