@@ -1,20 +1,10 @@
 import React, {createContext, useEffect, useState} from 'react';
-import { initData } from '../api/geolocation';
+import { fetchNewLocalDomain, fetchNewLocalIP, initData } from '../api/geolocation';
 import {ILocationWithIP} from '../interfaces';
-import *  as yup from 'yup';
+import { checkIsDomain, checkIsIP } from '../utilities/utilities';
 interface IProviderProps {
     children?:React.ReactNode;
 }
-function ipv4(message = 'Invalid IP address') {
-    return this.matches(/(^(\d{1,3}\.){3}(\d{1,3})$)/, {
-      message,
-      excludeEmptyString: true
-    }).test('ip', message, value => {
-      return value === undefined || value.trim() === ''
-        ? true
-        : value.split('.').find((i:string) => parseInt(i, 10) > 255) === undefined;
-    });
-  }
 const initialState = {
     ip:'192.212.174.101',
     isp:'SpaceX Starlink',
@@ -41,14 +31,32 @@ export const GeolocationContext = createContext<IValue>(initialState);
 export const GeolocationContextProvider = ({children}:IProviderProps)=>{
     const [appData, setData] = useState<IValue>(initialState);
     const [searchIP, setSearchIp] = useState('');
+    const [error, setError] = useState();
     async function initApp(){
         const {ip,isp, location} = await initData();
         setData({ip:ip, isp, location});
  
       }
-      const setNewIp = (e:React.FormEvent<HTMLInputElement>)=>{setSearchIp(e.currentTarget.value)};
-      const onSubmit = ()=>{
-        const isIP = yup.string().
+      const setNewIp = (e:React.FormEvent<HTMLInputElement>)=>{
+        console.log(e.currentTarget.value);
+        setSearchIp(e.currentTarget.value);
+        console.log('searchIP',searchIP);
+      };
+      const onSubmit = async ()=>{
+          if(checkIsIP(searchIP)) {
+            const response = await fetchNewLocalIP(searchIP);
+            return setData(response);
+          }
+          else if(checkIsDomain(searchIP)){
+            const response = await fetchNewLocalDomain(searchIP);
+            return setData(response);
+          }
+          else{
+            alert("You have entered an invalid param");
+          }
+          
+       
+       
       }
     useEffect( ()=>{
        
