@@ -72,10 +72,6 @@ const isAUrl = (string) => {
 
 I'm hoping to continue along the type script path after some reviewing of the docs, but I would like to get into learning a more state management system as so I don't have to drill through all the props to hand down a proper function. 
 
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward..
-
 
 ## Author
 

@@ -1,6 +1,5 @@
-import { LatLng, latLng, LeafletEvent, } from "leaflet";
-import { useState } from "react";
-import { MapContainer, Marker, TileLayer, useMapEvents  } from "react-leaflet";
+import { latLng } from "leaflet";
+import { MapContainer, TileLayer,  } from "react-leaflet";
 import { ILocation } from "../../interfaces";
 import { MapMarkerComp } from "./marker.component";
 export function Map({ location }: ILocation) {

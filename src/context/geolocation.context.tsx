@@ -31,7 +31,6 @@ export const GeolocationContext = createContext<IValue>(initialState);
 export const GeolocationContextProvider = ({children}:IProviderProps)=>{
     const [appData, setData] = useState<IValue>(initialState);
     const [searchIP, setSearchIp] = useState('');
-    const [error, setError] = useState();
     async function initApp(){
         const {ip,isp, location} = await initData();
         setData({ip:ip, isp, location});

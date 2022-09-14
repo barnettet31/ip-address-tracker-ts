@@ -1,7 +1,5 @@
 import styled from "styled-components";
-interface IContainerProps {
-    width:number;
-}
+
 export const AttributionContainer = styled.footer.attrs((props:{width:number})=>props)`
 margin-inset:auto;
 position:absolute;
