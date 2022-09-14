@@ -28,7 +28,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./desktop_screenshot.jpg) Desktop Screenshot
+![](./mobile_screenshot.jpg) Mobile Screenshot
 
 
 
@@ -51,18 +52,17 @@ Users should be able to:
 
 
 ### What I learned
+I was learning how to use the styled components library for html react in this project while trying to keep up the typescript train! While I didn't use the function, I found out that you can check for a valid url by using the URL() constructor and testing for the protocol! Here's some example JS
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+const isAUrl = (string) => {
+  let url;
+  try{
+    url = new URL(string);
+  }catch(e){
+    return false;
+  }
+  return url.protocol === 'http:' || url.protocol === 'https:';
 }
 ```
 
@@ -70,12 +70,11 @@ const proudOfThisFunc = () => {
 
 ### Continued development
 
-
+I'm hoping to continue along the type script path after some reviewing of the docs, but I would like to get into learning a more state management system as so I don't have to drill through all the props to hand down a proper function. 
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward..
 
 
 ## Author
@@ -84,7 +83,5 @@ const proudOfThisFunc = () => {
 - Twitter - [@barnett_travis5](https://twitter.com/barnett_travis5)
 - LinkedIn - [@travis-barnette-ba7987237](https://www.linkedin.com/in/travis-barnette-ba7987237/)
 
-
-## Acknowledgments
 
 
